@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP," />
+  <meta name="keywords" content="PHP SQL," />
 
 
 
@@ -88,14 +88,14 @@
 
 
 <meta name="description" content="概念​    PDO是一个基于面向对象编程思想封装的，使用 C 开发的数据库抽象层。 使用​    1.开启 PDO 驱动（扩展） ​    2.实例化 PDO 类，然后可以使用类的属性和方法操作数据库。 12345678$dsc = &apos;mysql:host=localhost;dbname=mysql_text&apos;;$user = &apos;root&apos;;$pass = &apos;123&apos;;$pdo = new P">
-<meta name="keywords" content="PHP">
+<meta name="keywords" content="PHP SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PHP的PDO基本使用">
 <meta property="og:url" content="http://yoursite.com/2017/04/22/PHP  PDO总结/index.html">
 <meta property="og:site_name" content="风之处所">
 <meta property="og:description" content="概念​    PDO是一个基于面向对象编程思想封装的，使用 C 开发的数据库抽象层。 使用​    1.开启 PDO 驱动（扩展） ​    2.实例化 PDO 类，然后可以使用类的属性和方法操作数据库。 12345678$dsc = &apos;mysql:host=localhost;dbname=mysql_text&apos;;$user = &apos;root&apos;;$pass = &apos;123&apos;;$pdo = new P">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-07T10:55:25.429Z">
+<meta property="og:updated_time" content="2018-04-07T11:01:21.218Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP的PDO基本使用">
 <meta name="twitter:description" content="概念​    PDO是一个基于面向对象编程思想封装的，使用 C 开发的数据库抽象层。 使用​    1.开启 PDO 驱动（扩展） ​    2.实例化 PDO 类，然后可以使用类的属性和方法操作数据库。 12345678$dsc = &apos;mysql:host=localhost;dbname=mysql_text&apos;;$user = &apos;root&apos;;$pass = &apos;123&apos;;$pdo = new P">
@@ -337,26 +337,19 @@
 <h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>​    1.开启 PDO 驱动（扩展）</p>
 <p>​    2.实例化 PDO 类，然后可以使用类的属性和方法操作数据库。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$dsc = <span class="string">'mysql:host=localhost;dbname=mysql_text'</span>;</span><br><span class="line"></span><br><span class="line">$user = <span class="string">'root'</span>;</span><br><span class="line"></span><br><span class="line">$pass = <span class="string">'123'</span>;</span><br><span class="line"></span><br><span class="line">$pdo = <span class="keyword">new</span> PDO($dsc,$user,$pass);</span><br><span class="line"><span class="comment">//实例化一个类的时候，会自动的先调用__construct()构造函数</span></span><br></pre></td></tr></table></figure>
-<h4 id="抽象类PDO的方法"><a href="#抽象类PDO的方法" class="headerlink" title="抽象类PDO的方法"></a>抽象类PDO的方法</h4><ol>
-<li><p>执行增删改语句的方法  PDO:exec( )</p>
-<p>​    成功返回影响的条数，失败返回false</p>
-</li>
-<li><p>执行查询语句的方法  PDO:query( )</p>
-<p>​    成功返回 PDOStatement 结果集对象，失败返回false</p>
-</li>
-<li><p>预处理语句的方法  PDO:prepare( )</p>
+<h4 id="抽象类PDO的方法"><a href="#抽象类PDO的方法" class="headerlink" title="抽象类PDO的方法"></a>抽象类PDO的方法</h4><h5 id="PDO-exec"><a href="#PDO-exec" class="headerlink" title="PDO:exec( )"></a><code>PDO:exec( )</code></h5><p>​    执行增删改语句的方法。功返回影响的条数，失败返回false</p>
+<h5 id="PDO-query"><a href="#PDO-query" class="headerlink" title="PDO:query( )"></a><code>PDO:query( )</code></h5><p>​    执行查询语句的方法。成功返回 <code>PDOStatement</code> 结果集对象，失败返回  <code>false</code></p>
+<h5 id="PDO-prepare"><a href="#PDO-prepare" class="headerlink" title="PDO:prepare( )"></a><code>PDO:prepare( )</code></h5><p>​    执行预处理语句的方法。</p>
 <p>​    预处理的步骤：</p>
-<p>​         一. 将 sql 语句的数据部分和非数据部分分离</p>
-<p>​         二. 使用 prepare( ) 将非数据部分编译</p>
-<pre><code>三. 使用 bindparam( ) 将数据绑定到编译结果上
-</code></pre><p>​     四. 使用 execute( ) 执行编译结果</p>
+<p>​         一. 将 <code>sql</code> 语句的数据部分和非数据部分分离</p>
+<p>​         二. 使用 <code>prepare( )</code> 将非数据部分编译</p>
+<pre><code>三. 使用` bindparam( ) `将数据绑定到编译结果上
+</code></pre><p>​     四. 使用<code>execute( )</code> 执行编译结果</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//预编译：prepare();参数是不带数据的sql语句</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//先将sql语句中的数据部分用占位符代替 :占位符名称</span></span><br><span class="line"></span><br><span class="line">$sql = <span class="string">'insert intogoods values(null,:name,:price,:number)'</span>;</span><br><span class="line"></span><br><span class="line">$smt = $pdo-&gt;prepare($sql);  <span class="comment">//返回一个PDOStament 对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//绑定数据 PDOStament对象的bindParam()来绑定参数：占位符，实际数据</span></span><br><span class="line"></span><br><span class="line">$goods_name= <span class="string">'surface'</span>;</span><br><span class="line"></span><br><span class="line">$goods_price= <span class="string">'3500'</span>;</span><br><span class="line"></span><br><span class="line">$goods_num= <span class="string">'41'</span>;</span><br><span class="line"></span><br><span class="line">$smt-&gt;bindParam(<span class="string">':name'</span>,$goods_name);</span><br><span class="line"></span><br><span class="line">$smt-&gt;bindParam(<span class="string">':price'</span>,$goods_price);</span><br><span class="line"></span><br><span class="line">$smt-&gt;bindParam(<span class="string">':number'</span>,$goods_num);</span><br><span class="line"></span><br><span class="line">$smt-&gt;execute()；</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
 <h4 id="抽象类-PDOstatement-的方法"><a href="#抽象类-PDOstatement-的方法" class="headerlink" title="抽象类 PDOstatement 的方法"></a>抽象类 PDOstatement 的方法</h4><h5 id="fetch"><a href="#fetch" class="headerlink" title="fetch( )"></a>fetch( )</h5><p>用于获取结果集中的下一行数据。</p>
 <p>方法语法格式如下</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PDOStatement::fetch ([ int $fetch_style [, int $cursor_orientation = PDO::FETCH_ORI_NEXT [, int $cursor_offset = <span class="number">0</span> ]]] )</span><br></pre></td></tr></table></figure>
-<p>参数 fetch_style：控制结果集的返回方式，其中可选择的值如下表：</p>
+<p>参数 <code>fetch_style</code>：控制结果集的返回方式，其中可选择的值如下表：</p>
 <table>
 <thead>
 <tr>
@@ -391,12 +384,12 @@
 </tr>
 </tbody>
 </table>
-<p>参数 cursor_orientation：PDOStatement对象的一个滚动游标，可以获取指定的一行。</p>
-<p>参数 cursor_offset：游标的偏移量。</p>
+<p>参数 <code>cursor_orientation</code>：<code>PDOStatement</code>对象的一个滚动游标，可以获取指定的一行。</p>
+<p>参数 <code>cursor_offset</code>：游标的偏移量。</p>
 <h5 id="fetchAll"><a href="#fetchAll" class="headerlink" title="fetchAll( )"></a>fetchAll( )</h5><p> 获取结果集中的所有行，并赋给返回的数组(二维)</p>
-<p>fetchAll()方法的语法格式如下：</p>
+<p><code>fetchAll()</code>方法的语法格式如下：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PDOStatement::fetchAll ([ int $fetch_style [, mixed $fetch_argument [, <span class="keyword">array</span> $ctor_args = <span class="keyword">array</span>() ]]] )</span><br></pre></td></tr></table></figure>
-<p>参数 fetch_style：控制结果集中数据的返回方式，可选值如下表：</p>
+<p>参数 <code>fetch_style</code>：控制结果集中数据的返回方式，可选值如下表：</p>
 <table>
 <thead>
 <tr>
@@ -431,12 +424,12 @@
 </tr>
 </tbody>
 </table>
-<p>参数 column_index：字段的索引！</p>
+<p>参数 <code>column_index</code>：字段的索引！</p>
 <h5 id="fetchColumn"><a href="#fetchColumn" class="headerlink" title="fetchColumn( )"></a>fetchColumn( )</h5><p>获取结果集中下一行指定列的值，从结果集中的下一行返回单独的一列</p>
-<p>fetchColumn()方法的语法格式如下：</p>
+<p><code>fetchColumn()</code>方法的语法格式如下：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string PDOStatement::fetchColumn ([ int $column_number = <span class="number">0</span> ] )</span><br></pre></td></tr></table></figure>
 <p>从结果集中的下一行返回单独的一列，如果无，则返回 FALSE 。</p>
-<p>可选参数 column_number设置行中列的索引值，该值从0开始，如果省略该参数那么就会从第 1 列开始取值。</p>
+<p>可选参数 <code>column_number</code>设置行中列的索引值，该值从0开始，如果省略该参数那么就会从第 1 列开始取值。</p>
 
       
     </div>
@@ -466,7 +459,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PHP/" rel="tag"># PHP</a>
+            <a href="/tags/PHP-SQL/" rel="tag"># PHP SQL</a>
           
         </div>
       
@@ -591,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象类PDO的方法"><span class="nav-number">3.</span> <span class="nav-text">抽象类PDO的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象类-PDOstatement-的方法"><span class="nav-number">4.</span> <span class="nav-text">抽象类 PDOstatement 的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#fetch"><span class="nav-number">4.1.</span> <span class="nav-text">fetch( )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fetchAll"><span class="nav-number">4.2.</span> <span class="nav-text">fetchAll( )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fetchColumn"><span class="nav-number">4.3.</span> <span class="nav-text">fetchColumn( )</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象类PDO的方法"><span class="nav-number">3.</span> <span class="nav-text">抽象类PDO的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PDO-exec"><span class="nav-number">3.1.</span> <span class="nav-text">PDO:exec( )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PDO-query"><span class="nav-number">3.2.</span> <span class="nav-text">PDO:query( )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PDO-prepare"><span class="nav-number">3.3.</span> <span class="nav-text">PDO:prepare( )</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象类-PDOstatement-的方法"><span class="nav-number">4.</span> <span class="nav-text">抽象类 PDOstatement 的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#fetch"><span class="nav-number">4.1.</span> <span class="nav-text">fetch( )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fetchAll"><span class="nav-number">4.2.</span> <span class="nav-text">fetchAll( )</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#fetchColumn"><span class="nav-number">4.3.</span> <span class="nav-text">fetchColumn( )</span></a></li></ol></li></ol></div>
             
 
           </div>
