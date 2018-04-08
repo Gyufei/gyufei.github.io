@@ -1,0 +1,729 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端,Vue," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="计算属性计算属性用于属性的值依赖于实例的某个或多个状态，需要经过较为复杂的逻辑生成时。 计算属性定义在实例的computed属性中，其对应的函数相当于它的　getter　。当计算属性依赖的其他属性发生变化时，计算属性会同样进行更新。 计算属性的基础例子如下： 123456789101112131415161718192021222324&amp;lt;div id=&quot;app1&quot;&amp;gt;	&amp;lt;p&amp;gt;">
+<meta name="keywords" content="前端,Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue学习笔记（二）：计算属性和侦听器">
+<meta property="og:url" content="http://yoursite.com/2018/01/22/Vue学习笔记二/index.html">
+<meta property="og:site_name" content="风之处所">
+<meta property="og:description" content="计算属性计算属性用于属性的值依赖于实例的某个或多个状态，需要经过较为复杂的逻辑生成时。 计算属性定义在实例的computed属性中，其对应的函数相当于它的　getter　。当计算属性依赖的其他属性发生变化时，计算属性会同样进行更新。 计算属性的基础例子如下： 123456789101112131415161718192021222324&amp;lt;div id=&quot;app1&quot;&amp;gt;	&amp;lt;p&amp;gt;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-08T16:19:30.107Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue学习笔记（二）：计算属性和侦听器">
+<meta name="twitter:description" content="计算属性计算属性用于属性的值依赖于实例的某个或多个状态，需要经过较为复杂的逻辑生成时。 计算属性定义在实例的computed属性中，其对应的函数相当于它的　getter　。当计算属性依赖的其他属性发生变化时，计算属性会同样进行更新。 计算属性的基础例子如下： 123456789101112131415161718192021222324&amp;lt;div id=&quot;app1&quot;&amp;gt;	&amp;lt;p&amp;gt;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/22/Vue学习笔记二/"/>
+
+
+
+
+
+  <title> Vue学习笔记（二）：计算属性和侦听器 | 风之处所 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">风之处所</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/22/Vue学习笔记二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gyf">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风之处所">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Vue学习笔记（二）：计算属性和侦听器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T00:00:00+08:00">
+                2018-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><p><strong>计算属性用于属性的值依赖于实例的某个或多个状态，需要经过较为复杂的逻辑生成时</strong>。</p>
+<p>计算属性定义在实例的<code>computed</code>属性中，其对应的函数相当于它的　<code>getter</code>　。当计算属性依赖的其他属性发生变化时，计算属性会同样进行更新。</p>
+<p>计算属性的基础例子如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app1"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>你购买了 &#123;&#123; good.name &#125;&#125; 共 &#123;&#123; good.count &#125;&#125; 件<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>需支付: &#123;&#123; total_money &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;text&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> app1 = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="undefined">	data:&#123;</span></span><br><span class="line"><span class="undefined">		good:&#123;</span></span><br><span class="line"><span class="javascript">			name:<span class="string">'可乐'</span>,</span></span><br><span class="line"><span class="javascript">			price:<span class="number">5</span>,				<span class="comment">//价格</span></span></span><br><span class="line"><span class="javascript">			count:<span class="number">4</span>,			<span class="comment">//件数</span></span></span><br><span class="line"><span class="undefined">			&#125;,</span></span><br><span class="line"><span class="javascript">		delivery:７,				 <span class="comment">//配送费</span></span></span><br><span class="line"><span class="javascript">		rebate:<span class="number">0.8</span>,				 <span class="comment">//折扣</span></span></span><br><span class="line"><span class="javascript">		text: <span class="string">'请付款'</span>　　　　　　　<span class="comment">//提示语</span></span></span><br><span class="line"><span class="undefined">	&#125;,</span></span><br><span class="line"><span class="undefined">	computed:&#123;				</span></span><br><span class="line"><span class="javascript">		total: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">return</span> (<span class="keyword">this</span>.good.price　* <span class="keyword">this</span>.good.count * <span class="keyword">this</span>.rebate) + <span class="keyword">this</span>.delivery</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">&#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="计算属性的setter"><a href="#计算属性的setter" class="headerlink" title="计算属性的setter"></a>计算属性的<code>setter</code></h4><p>计算属性的值除了定义为一个作用相当于 <code>getter</code>　的函数外，同样可以定义 <code>setter</code>，用于在主动改变计算属性值时进行相应的操作。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">.....</span></span><br><span class="line"><span class="undefined">computed:&#123;</span></span><br><span class="line"><span class="undefined">	total:&#123;</span></span><br><span class="line"><span class="javascript">		get:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">return</span> (<span class="keyword">this</span>.good.price　* <span class="keyword">this</span>.good.count * <span class="keyword">this</span>.rebate) + <span class="keyword">this</span>.delivery;</span></span><br><span class="line"><span class="undefined">		&#125;,</span></span><br><span class="line"><span class="javascript">		set:<span class="function"><span class="keyword">function</span>(<span class="params">val</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">			<span class="keyword">this</span>.text = <span class="string">'请不要擅自修改总价！！！'</span>        </span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">......</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="计算属性与方法的不同点"><a href="#计算属性与方法的不同点" class="headerlink" title="计算属性与方法的不同点"></a>计算属性与方法的不同点</h4><p>计算属性是<strong>基于它的依赖进行缓存的</strong>。也就是说，当重复使用计算属性时，如果它依赖的那些属性没有变化的话，计算属性的对应函数不会被重复调用，而是直接返回缓存的值。</p>
+<p>而方法在每次调用时，都会执行。</p>
+<h3 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h3><p><code>Vue</code>通过侦听器来进行数据侦听，响应数据的变化。主要用于在数据变化时<strong>执行一些开销较大或异步的操作</strong>。如数据请求和<code>Ajax</code>请求。</p>
+<p>侦听器主要在实例的<code>watch</code>属性中定义，如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app2"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"question"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; answer &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> app2 = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="undefined">		data:&#123;</span></span><br><span class="line"><span class="javascript">			question:<span class="string">''</span>,</span></span><br><span class="line"><span class="javascript">			answer:<span class="string">'to be'</span>,</span></span><br><span class="line"><span class="undefined">		&#125;,</span></span><br><span class="line"><span class="undefined">		watch:&#123;</span></span><br><span class="line"><span class="javascript">			question:<span class="function"><span class="keyword">function</span>(<span class="params">newvalue,oldvalue</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">				$ajax(<span class="string">'www.baidu.com'</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> <span class="keyword">this</span>.answer = res)</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	&#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="计算属性和侦听器的不同"><a href="#计算属性和侦听器的不同" class="headerlink" title="计算属性和侦听器的不同"></a>计算属性和侦听器的不同</h4><p>计算属性相比侦听器，代码更清晰简明。但在不设置 <code>setter</code>时，计算属性无法主动改变值。</p>
+<p>对于一些异步的操作或需要对数据变化更复杂的响应时，计算属性无法实现，只能使用侦听器。另外侦听器监听的属性未改变时，仍可主动对监听属性变化时影响到的属性进行赋值改变操作。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/10/Vue学习笔记一/" rel="next" title="Vue学习笔记（一）:基础概念">
+                <i class="fa fa-chevron-left"></i> Vue学习笔记（一）:基础概念
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/12/Rails学习笔记一/" rel="prev" title="Rails 学习笔记（一）:基本概念">
+                Rails 学习笔记（一）:基本概念 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Gyf" />
+          <p class="site-author-name" itemprop="name">Gyf</p>
+           
+              <p class="site-description motion-element" itemprop="description">我想问问我可不可以喜欢你啊？</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算属性"><span class="nav-number">1.</span> <span class="nav-text">计算属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算属性的setter"><span class="nav-number">1.1.</span> <span class="nav-text">计算属性的setter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算属性与方法的不同点"><span class="nav-number">1.2.</span> <span class="nav-text">计算属性与方法的不同点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侦听器"><span class="nav-number">2.</span> <span class="nav-text">侦听器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#计算属性和侦听器的不同"><span class="nav-number">2.1.</span> <span class="nav-text">计算属性和侦听器的不同</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gyf</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

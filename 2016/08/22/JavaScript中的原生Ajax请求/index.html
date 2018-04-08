@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="微信小程序," />
+  <meta name="keywords" content="前端,JavaScript," />
 
 
 
@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="登录微信小程序的登录主要步骤如下：  客户端调用 wx.login() ，获得返回参数 code  客户端调用 wx.request() 将 code 发送到服务器  服务器将 code 和存储在服务器的 appid 和 appSecret 共三个参数作为请求参数，向微信服务器接口发起请求获得返回参数 openid 和 session_key 。  openid 是用户唯一标识。 session_">
-<meta name="keywords" content="微信小程序">
+<meta name="description" content="Javascript 的原生ajax请求12345678910111213141516171819202122232425262728293031323334353637383940//创建 ajax 对象var xmlhttp;if (window.XMLHttpRequest)  &amp;#123;    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码">
+<meta name="keywords" content="前端,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序的登录和登录状态维护">
-<meta property="og:url" content="http://yoursite.com/2017/10/12/小程序登陆和获取用户信息/index.html">
+<meta property="og:title" content="JavaScript 的原生 Ajax 请求">
+<meta property="og:url" content="http://yoursite.com/2016/08/22/JavaScript中的原生Ajax请求/index.html">
 <meta property="og:site_name" content="风之处所">
-<meta property="og:description" content="登录微信小程序的登录主要步骤如下：  客户端调用 wx.login() ，获得返回参数 code  客户端调用 wx.request() 将 code 发送到服务器  服务器将 code 和存储在服务器的 appid 和 appSecret 共三个参数作为请求参数，向微信服务器接口发起请求获得返回参数 openid 和 session_key 。  openid 是用户唯一标识。 session_">
+<meta property="og:description" content="Javascript 的原生ajax请求12345678910111213141516171819202122232425262728293031323334353637383940//创建 ajax 对象var xmlhttp;if (window.XMLHttpRequest)  &amp;#123;    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-07T15:17:36.105Z">
+<meta property="og:updated_time" content="2018-04-07T15:50:28.020Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序的登录和登录状态维护">
-<meta name="twitter:description" content="登录微信小程序的登录主要步骤如下：  客户端调用 wx.login() ，获得返回参数 code  客户端调用 wx.request() 将 code 发送到服务器  服务器将 code 和存储在服务器的 appid 和 appSecret 共三个参数作为请求参数，向微信服务器接口发起请求获得返回参数 openid 和 session_key 。  openid 是用户唯一标识。 session_">
+<meta name="twitter:title" content="JavaScript 的原生 Ajax 请求">
+<meta name="twitter:description" content="Javascript 的原生ajax请求12345678910111213141516171819202122232425262728293031323334353637383940//创建 ajax 对象var xmlhttp;if (window.XMLHttpRequest)  &amp;#123;    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/12/小程序登陆和获取用户信息/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/22/JavaScript中的原生Ajax请求/"/>
 
 
 
 
 
-  <title> 微信小程序的登录和登录状态维护 | 风之处所 </title>
+  <title> JavaScript 的原生 Ajax 请求 | 风之处所 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -261,7 +261,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/12/小程序登陆和获取用户信息/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/22/JavaScript中的原生Ajax请求/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gyf">
@@ -282,7 +282,7 @@
             
             
               
-                微信小程序的登录和登录状态维护
+                JavaScript 的原生 Ajax 请求
               
             
           </h1>
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-12T00:00:00+08:00">
-                2017-10-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-22T00:00:00+08:00">
+                2016-08-22
               </time>
             
 
@@ -320,8 +320,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/微信小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">微信小程序</span>
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
                   </a>
                 </span>
 
@@ -355,57 +355,7 @@
       
 
       
-        <h4 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h4><p>微信小程序的登录主要步骤如下：</p>
-<ol>
-<li><p>客户端调用 <code>wx.login()</code> ，获得返回参数 <code>code</code></p>
-</li>
-<li><p>客户端调用 <code>wx.request()</code> 将 <code>code</code> 发送到服务器</p>
-</li>
-<li><p>服务器将 <code>code</code> 和存储在服务器的 <code>appid</code> 和 <code>appSecret</code> 共三个参数作为请求参数，向微信服务器接口发起请求获得返回参数 <code>openid</code> 和 <code>session_key</code> 。</p>
-<p> <code>openid</code> 是用户唯一标识。</p>
-<p><code>session_key</code> 是针对用户数据进行加密签名的密匙。session_key在文件校验，获取用户信息时均需使用</p>
-<p> 微信服务器返回的两个参数一般为了安全起见，都不会发往客户端。</p>
-<p> 微信服务器的请求接口地址为：<code>https://api.weixin.qq.com/sns/jscode2session?appid=APPID&amp;secret=SECRET&amp;js_code=JSCODE&amp;grant_type=authorization_code</code>    </p>
-</li>
-<li><p>服务器使用 <code>openid</code> 和 <code>session_key</code> 生成 <code>3rd_session</code> 作为自己派发的登陆态标识<code>token</code>，将其发送到小程序客户端。</p>
-<p> 在生成 <code>3rd_session</code> 时，将 <code>3rd_session</code> 作为键，将<code>session_key + openid</code> 作为值，存储在 服务器的 <code>session</code> 存储中。每个<code>3rd_session</code>都需要设置一个失效时间。</p>
-</li>
-<li><p>小程序客户端将 <code>3rd_session</code> 存入 <code>storage</code></p>
-</li>
-<li><p>后续用户进入小程序时，首先调用<code>wx.checksession()</code> 检测登陆态，如果失败，重新发起登陆流程。</p>
-</li>
-<li><p>如果登陆状态未失效，则从 <code>storage</code> 中读取 <code>3rd_session</code>。在需要用户标识的 wx.request() 时作为用户标识发送到服务器检验,服务器判断其是否合法。</p>
-</li>
-</ol>
-<h4 id="获取用户信息"><a href="#获取用户信息" class="headerlink" title="获取用户信息"></a>获取用户信息</h4><p>获取用户信息时，根据微信请求用户信息接口<code>wx.getUserinfo()</code>函数的请求参数<code>withCredentials</code>的布尔值及用户的登陆状态不同，会有不同的返回值。</p>
-<ol>
-<li><p><strong>当<code>withCredentials</code> 为 <code>true</code> 且 用户登陆态未到期</strong></p>
-<p>返回的数据会包括 <code>encryptedData</code>，<code>iv</code>等敏感数据。如下：</p>
-<ol>
-<li><p><code>userinfo</code>     不包含敏感数据的用户信息</p>
-</li>
-<li><p><code>rawData</code>      不包含敏感数据的原始数据字符串,用于签名校验</p>
-</li>
-<li><p><code>signature</code>。  使用<code>sha1( rawData + sessionkey )</code> 得到的字符串，用于签名校验数据</p>
-</li>
-<li><p><code>encryptedData</code>    包含 <code>openId</code>，<code>unionId</code> 等用户敏感数据的加密数据</p>
-</li>
-<li><p><code>iv</code>   加密算法的初始向量</p>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="2">
-<li><p><strong>当withCredentials 为 <code>false</code> 时</strong></p>
-<p>不要求登陆状态，返回数据不包含敏感数据。</p>
-</li>
-</ol>
-<hr>
-<h4 id="小程序的数据签名校验和数据解密"><a href="#小程序的数据签名校验和数据解密" class="headerlink" title="小程序的数据签名校验和数据解密"></a>小程序的数据签名校验和数据解密</h4><p><strong>签名校验(用于校验数据完整性等)：</strong></p>
-<p>需要使用<code>session_key</code>。客户端将 <code>signature</code> 和 <code>rawData</code> 发送到服务器，服务器通过相同的 <code>sha1( rewData + session_key)</code> 算法计算出 <code>signature2</code>，并与客户端发送过来的<code>signature</code>对比，校验数据完整性。</p>
-<hr>
-<p><strong>加密数据encryptedData的解密：</strong></p>
-<p>需要客户端将接口返回的<code>encryptedData</code>发送到服务器，服务器使用 <code>appId</code> 和 <code>session_key</code> ，根据加密算法的初始向量 <code>iv</code> 对 <code>encryptedData</code>  进行解密（微信提供有后端解密代码，包括python，php等(无java)</p>
+        <h4 id="Javascript-的原生ajax请求"><a href="#Javascript-的原生ajax请求" class="headerlink" title="Javascript 的原生ajax请求"></a><code>Javascript</code> 的原生<code>ajax</code>请求</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建 ajax 对象</span></span><br><span class="line"><span class="keyword">var</span> xmlhttp;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码</span></span><br><span class="line">    xmlhttp=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// IE6, IE5 浏览器执行代码</span></span><br><span class="line">    xmlhttp=<span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">每当readyState改变时，都会调用 onreadystatechange 函数</span></span><br><span class="line"><span class="comment">当请求为异步时调用readyState，请求为同步时直接将业务代码放在send()函数之后即可。</span></span><br><span class="line"><span class="comment">readyState:</span></span><br><span class="line"><span class="comment">存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。</span></span><br><span class="line"><span class="comment">  0: 请求未初始化</span></span><br><span class="line"><span class="comment">  1: 服务器连接已建立</span></span><br><span class="line"><span class="comment">  2: 请求已接收</span></span><br><span class="line"><span class="comment">  3: 请求处理中</span></span><br><span class="line"><span class="comment">  4: 请求已完成，且响应已就绪</span></span><br><span class="line"><span class="comment">status:</span></span><br><span class="line"><span class="comment">  http响应码</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">xmlhttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)</span><br><span class="line">    &#123;        		</span><br><span class="line">    <span class="comment">/* responseText 获得字符串形式的响应数据 */</span></span><br><span class="line">    <span class="comment">/* responseXML 获得XML形式的响应数据 */</span></span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=xmlhttp.responseText;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//规定请求的类型，url，异步或非异步</span></span><br><span class="line">xmlhttp.open(<span class="string">"POST"</span>,<span class="string">"/try/ajax/demo_post2.php"</span>,<span class="literal">true</span>);</span><br><span class="line"><span class="comment">//添加请求头</span></span><br><span class="line">xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line"><span class="comment">//当post请求时可以携带字符串参数</span></span><br><span class="line">xmlhttp.send();</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -435,7 +385,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/微信小程序/" rel="tag"># 微信小程序</a>
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -448,8 +400,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/14/MySql 数据类型/" rel="next" title="MySql 的数据类型">
-                <i class="fa fa-chevron-left"></i> MySql 的数据类型
+              <a href="/2016/07/02/HTML中meta标签说明/" rel="next" title="HTML中 meta 标签说明">
+                <i class="fa fa-chevron-left"></i> HTML中 meta 标签说明
               </a>
             
           </div>
@@ -458,8 +410,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/04/微信小程序的支付和退款流程/" rel="prev" title="微信小程序的支付和退款流程">
-                微信小程序的支付和退款流程 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/18/JavaScript的几种数组去重方法/" rel="prev" title="JavaScript 的几种数组去重方法">
+                JavaScript 的几种数组去重方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -589,7 +541,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#登录"><span class="nav-number">1.</span> <span class="nav-text">登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取用户信息"><span class="nav-number">2.</span> <span class="nav-text">获取用户信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小程序的数据签名校验和数据解密"><span class="nav-number">3.</span> <span class="nav-text">小程序的数据签名校验和数据解密</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Javascript-的原生ajax请求"><span class="nav-number">1.</span> <span class="nav-text">Javascript 的原生ajax请求</span></a></li></ol></div>
             
 
           </div>
