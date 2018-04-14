@@ -48,17 +48,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -87,18 +105,18 @@
 
 
 
-<meta name="description" content="Javascript 的原生ajax请求12345678910111213141516171819202122232425262728293031323334353637383940//创建 ajax 对象var xmlhttp;if (window.XMLHttpRequest)  &amp;#123;    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码">
+<meta name="description" content="Javascript 的原生ajax请求1234567891011121314151617181920212223242526272829303132333435363738//创建 ajax 对象var xmlhttp;if (window.XMLHttpRequest)  &amp;#123;    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码">
 <meta name="keywords" content="前端,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 的原生 Ajax 请求">
 <meta property="og:url" content="http://yoursite.com/2016/08/22/JavaScript中的原生Ajax请求/index.html">
 <meta property="og:site_name" content="风之处所">
-<meta property="og:description" content="Javascript 的原生ajax请求12345678910111213141516171819202122232425262728293031323334353637383940//创建 ajax 对象var xmlhttp;if (window.XMLHttpRequest)  &amp;#123;    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码">
+<meta property="og:description" content="Javascript 的原生ajax请求1234567891011121314151617181920212223242526272829303132333435363738//创建 ajax 对象var xmlhttp;if (window.XMLHttpRequest)  &amp;#123;    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-07T15:50:28.020Z">
+<meta property="og:updated_time" content="2018-04-14T15:01:36.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 的原生 Ajax 请求">
-<meta name="twitter:description" content="Javascript 的原生ajax请求12345678910111213141516171819202122232425262728293031323334353637383940//创建 ajax 对象var xmlhttp;if (window.XMLHttpRequest)  &amp;#123;    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码">
+<meta name="twitter:description" content="Javascript 的原生ajax请求1234567891011121314151617181920212223242526272829303132333435363738//创建 ajax 对象var xmlhttp;if (window.XMLHttpRequest)  &amp;#123;    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码">
 
 
 
@@ -173,7 +191,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -278,14 +296,14 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
             
             
               
                 JavaScript 的原生 Ajax 请求
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -355,7 +373,7 @@
       
 
       
-        <h4 id="Javascript-的原生ajax请求"><a href="#Javascript-的原生ajax请求" class="headerlink" title="Javascript 的原生ajax请求"></a><code>Javascript</code> 的原生<code>ajax</code>请求</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建 ajax 对象</span></span><br><span class="line"><span class="keyword">var</span> xmlhttp;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码</span></span><br><span class="line">    xmlhttp=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// IE6, IE5 浏览器执行代码</span></span><br><span class="line">    xmlhttp=<span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">每当readyState改变时，都会调用 onreadystatechange 函数</span></span><br><span class="line"><span class="comment">当请求为异步时调用readyState，请求为同步时直接将业务代码放在send()函数之后即可。</span></span><br><span class="line"><span class="comment">readyState:</span></span><br><span class="line"><span class="comment">存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。</span></span><br><span class="line"><span class="comment">  0: 请求未初始化</span></span><br><span class="line"><span class="comment">  1: 服务器连接已建立</span></span><br><span class="line"><span class="comment">  2: 请求已接收</span></span><br><span class="line"><span class="comment">  3: 请求处理中</span></span><br><span class="line"><span class="comment">  4: 请求已完成，且响应已就绪</span></span><br><span class="line"><span class="comment">status:</span></span><br><span class="line"><span class="comment">  http响应码</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">xmlhttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)</span><br><span class="line">    &#123;        		</span><br><span class="line">    <span class="comment">/* responseText 获得字符串形式的响应数据 */</span></span><br><span class="line">    <span class="comment">/* responseXML 获得XML形式的响应数据 */</span></span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=xmlhttp.responseText;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//规定请求的类型，url，异步或非异步</span></span><br><span class="line">xmlhttp.open(<span class="string">"POST"</span>,<span class="string">"/try/ajax/demo_post2.php"</span>,<span class="literal">true</span>);</span><br><span class="line"><span class="comment">//添加请求头</span></span><br><span class="line">xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line"><span class="comment">//当post请求时可以携带字符串参数</span></span><br><span class="line">xmlhttp.send();</span><br></pre></td></tr></table></figure>
+        <h4 id="Javascript-的原生ajax请求"><a href="#Javascript-的原生ajax请求" class="headerlink" title="Javascript 的原生ajax请求"></a><code>Javascript</code> 的原生<code>ajax</code>请求</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建 ajax 对象</span></span><br><span class="line"><span class="keyword">var</span> xmlhttp;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码</span></span><br><span class="line">    xmlhttp=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">// IE6, IE5 浏览器执行代码</span></span><br><span class="line">    xmlhttp=<span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">每当readyState改变时，都会调用 onreadystatechange 函数</span></span><br><span class="line"><span class="comment">当请求为异步时调用readyState，请求为同步时直接将业务代码放在send()函数之后即可。</span></span><br><span class="line"><span class="comment">readyState:</span></span><br><span class="line"><span class="comment">存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。</span></span><br><span class="line"><span class="comment">  0: 请求未初始化</span></span><br><span class="line"><span class="comment">  1: 服务器连接已建立</span></span><br><span class="line"><span class="comment">  2: 请求已接收</span></span><br><span class="line"><span class="comment">  3: 请求处理中</span></span><br><span class="line"><span class="comment">  4: 请求已完成，且响应已就绪</span></span><br><span class="line"><span class="comment">status:</span></span><br><span class="line"><span class="comment">  http响应码</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">xmlhttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)&#123;</span><br><span class="line">    <span class="comment">/* responseText 获得字符串形式的响应数据 */</span></span><br><span class="line">    <span class="comment">/* responseXML 获得XML形式的响应数据 */</span></span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>).innerHTML=xmlhttp.responseText;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//规定请求的类型，url，异步或非异步</span></span><br><span class="line">xmlhttp.open(<span class="string">"POST"</span>,<span class="string">"/try/ajax/demo_post2.php"</span>,<span class="literal">true</span>);</span><br><span class="line"><span class="comment">//添加请求头</span></span><br><span class="line">xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line"><span class="comment">//当post请求时可以携带字符串参数</span></span><br><span class="line">xmlhttp.send();</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -476,15 +494,15 @@
                alt="Gyf" />
           <p class="site-author-name" itemprop="name">Gyf</p>
            
-              <p class="site-description motion-element" itemprop="description">我想问问我可不可以喜欢你啊？</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -495,7 +513,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -506,7 +524,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -517,6 +535,35 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gyufei" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/afei-7701" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1865042755/profile" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
           
         </div>
 
@@ -572,17 +619,13 @@
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
 
         
 
@@ -708,6 +751,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

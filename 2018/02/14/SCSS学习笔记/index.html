@@ -48,17 +48,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -95,7 +113,7 @@
 <meta property="og:site_name" content="风之处所">
 <meta property="og:description" content="须知SCSS 与 Sass 的关系SCSS 完全兼容 CSS3 ，是 Sass 3 引入的新语法。 即 Sass 有两种语法。  一种是 SCSS，支持 CSS3。   另一种是 缩排语法，也称作 Sass。这种语法不使用花括号，通过缩排来表达层级，通过换行符来分隔属性。  下文提到的 Sass 均指使用 Scss 语法书写的，后缀名为 scss 的 Sass 文件 导入sass 的导入使用 @i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-07T14:26:14.078Z">
+<meta property="og:updated_time" content="2018-04-14T15:10:31.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SCSS学习笔记">
 <meta name="twitter:description" content="须知SCSS 与 Sass 的关系SCSS 完全兼容 CSS3 ，是 Sass 3 引入的新语法。 即 Sass 有两种语法。  一种是 SCSS，支持 CSS3。   另一种是 缩排语法，也称作 Sass。这种语法不使用花括号，通过缩排来表达层级，通过换行符来分隔属性。  下文提到的 Sass 均指使用 Scss 语法书写的，后缀名为 scss 的 Sass 文件 导入sass 的导入使用 @i">
@@ -173,7 +191,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -278,14 +296,14 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
             
             
               
                 SCSS学习笔记
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -377,17 +395,17 @@
 <h3 id="SCSS变量"><a href="#SCSS变量" class="headerlink" title="SCSS变量"></a>SCSS变量</h3><h4 id="普通变量"><a href="#普通变量" class="headerlink" title="普通变量"></a>普通变量</h4><p>sass 变量必须以 <code>$</code> 开头,后面紧跟变量名。</p>
 <p>变量名和变量值之间使用冒号<code>:</code>分隔，类似 CSS 属性设置。</p>
 <p>变量值后面加上 <code>!default</code> 表示默认值。可以在默认变量之前为其重新赋值从而覆盖默认值，在组件开发时会很有用。</p>
-   <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$fontSize</span>: <span class="number">14px</span>;      <span class="comment">//定义之后可以在全局使用</span></span><br><span class="line"><span class="variable">$baseLineHeight</span>: <span class="number">2</span>;   <span class="comment">//覆盖默认值</span></span><br><span class="line"><span class="variable">$baseLineHeight</span>: <span class="number">1.5</span>!default;  <span class="comment">//默认值</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">  <span class="attribute">font-size</span>:<span class="variable">$fontSize</span>;</span><br><span class="line">  <span class="attribute">line-height</span>:<span class="variable">$baseLineHeight</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+   <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$fontSize</span>: <span class="number">14px</span>;      <span class="comment">//定义之后可以在全局使用</span></span><br><span class="line"><span class="variable">$baseLineHeight</span>: <span class="number">2</span>;   <span class="comment">//覆盖默认值</span></span><br><span class="line"><span class="variable">$baseLineHeight</span>: <span class="number">1.5</span>!default;  <span class="comment">//默认值</span></span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="variable">$fontSize</span>;</span><br><span class="line">    <span class="attribute">line-height</span>:<span class="variable">$baseLineHeight</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="特殊变量"><a href="#特殊变量" class="headerlink" title="特殊变量"></a>特殊变量</h4><p>如果变量不是作为属性值使用 而是 <strong>作为属性名</strong> 使用，或某些特殊情况下的变量，需要以 <code>#{$variables}</code> 形式使用。</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">   <span class="variable">$borderDirection</span> : top!default</span><br><span class="line">   <span class="variable">$baseFontSize</span>: <span class="number">12px</span> !default</span><br><span class="line">   <span class="variable">$baseLineHeight</span>: <span class="number">1.5</span>!default</span><br><span class="line">     </span><br><span class="line"> .border-#&#123;<span class="variable">$borderDirection</span>&#125;&#123;   //变量应用于类 </span><br><span class="line">   border-#&#123;<span class="variable">$borderDirection</span>&#125;: <span class="number">1px</span> solid <span class="number">#ccc</span>;  <span class="comment">//应用于属性名</span></span><br><span class="line">  &#125;    </span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">  <span class="attribute">font</span>:#&#123;<span class="variable">$baseFontSize</span>&#125;/#&#123;<span class="variable">$baseLineHeight</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="多值变量"><a href="#多值变量" class="headerlink" title="多值变量"></a>多值变量</h4><p>分为 list 类型(类似数组) 和 map 类型(类似变量)。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$borderDirection</span> : top!default</span><br><span class="line"><span class="variable">$baseFontSize</span>: <span class="number">12px</span> !default</span><br><span class="line"><span class="variable">$baseLineHeight</span>: <span class="number">1.5</span>!default</span><br><span class="line">     </span><br><span class="line">.border-#&#123;<span class="variable">$borderDirection</span>&#125;&#123;   //变量应用于类 </span><br><span class="line">    border-#&#123;<span class="variable">$borderDirection</span>&#125;: <span class="number">1px</span> solid <span class="number">#ccc</span>;  <span class="comment">//应用于属性名</span></span><br><span class="line">&#125;    </span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">font</span>:#&#123;<span class="variable">$baseFontSize</span>&#125;/#&#123;<span class="variable">$baseLineHeight</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="多值变量"><a href="#多值变量" class="headerlink" title="多值变量"></a>多值变量</h4><p>分为 <code>list</code> 类型(类似数组) 和 <code>map</code>类型(类似变量)。</p>
 <h5 id="list类型"><a href="#list类型" class="headerlink" title="list类型"></a>list类型</h5>   <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$colorArr</span>: <span class="number">#ccc</span> <span class="number">#fff</span> <span class="number">#ddd</span>; <span class="comment">//可使用空格，小括号，逗号三种方式来分隔各项</span></span><br><span class="line"><span class="comment">//使用nth($var,$index)取值</span></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>:nth(<span class="variable">$colorArr</span>,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="map类型"><a href="#map类型" class="headerlink" title="map类型"></a>map类型</h5><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$head</span>:&#123; h1:<span class="number">2em</span>, h2:<span class="number">1.5em</span>, h3:<span class="number">1.2em</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用 map-get($map,$key)来取值</span></span><br><span class="line"><span class="selector-tag">h1</span>&#123;</span><br><span class="line">  <span class="attribute">font-size</span>:map-get(<span class="variable">$head</span>,h1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h4><p>在变量值后加上 <code>！global</code>即声明为全局变量。(目前版本暂不支持)</p>
 <p>目前的变量机制为：<strong>局部变量会覆盖全局变量</strong></p>
 <h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3><h4 id="选择器嵌套"><a href="#选择器嵌套" class="headerlink" title="选择器嵌套"></a>选择器嵌套</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#nav</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">40px</span>;</span><br><span class="line">  <span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">    </span><br><span class="line">    &amp;:hover&#123;     <span class="comment">//可以使用 &amp; 来表示父元素</span></span><br><span class="line">      <span class="attribute">color</span>:blue;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  @at-root .child&#123;   <span class="comment">//@at-root 可用于跳出父级元素嵌套</span></span><br><span class="line">    <span class="attribute">color</span>:yellow;</span><br><span class="line">  &#125;</span><br><span class="line">  @at-root&#123;</span><br><span class="line">    <span class="selector-class">.parent</span>&#123;</span><br><span class="line">      <span class="attribute">color</span>:black;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.grand</span>&#123;</span><br><span class="line">      <span class="attribute">color</span>:<span class="number">#ccc</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="属性嵌套"><a href="#属性嵌套" class="headerlink" title="属性嵌套"></a>属性嵌套</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.nav</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:&#123;</span><br><span class="line">    style:solid;</span><br><span class="line">    <span class="attribute">left</span>:&#123;</span><br><span class="line">      width:<span class="number">4px</span>;</span><br><span class="line">      <span class="attribute">color</span>:$<span class="number">888</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="attribute">right</span>:&#123;</span><br><span class="line">      width:<span class="number">2px</span>;</span><br><span class="line">      <span class="attribute">color</span>:<span class="number">#999</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="混合"><a href="#混合" class="headerlink" title="混合"></a>混合</h3><p>sass 使用 @mixin 声明混合，可传递参数，参数名以 $ 符号开始，多个参数以逗号隔开，可以为参数设置默认值。</p>
+<h3 id="混合"><a href="#混合" class="headerlink" title="混合"></a>混合</h3><p>sass 使用 <code>@mixin</code> 声明混合，可传递参数，参数名以 <code>$</code>符号开始，多个参数以逗号隔开，可以为参数设置默认值。</p>
 <p>声明后的 <code>@mixin</code> 通过 <code>@include</code> 调用</p>
 <h4 id="无参数-mixin"><a href="#无参数-mixin" class="headerlink" title="无参数 mixin"></a>无参数 mixin</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*无参数 @mixin */</span></span><br><span class="line">@<span class="keyword">mixin</span> center-block&#123;  <span class="comment">// @mixin 的声明</span></span><br><span class="line">  <span class="attribute">margin-left</span>:auto;</span><br><span class="line">  <span class="attribute">margin-right</span>:auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.demo</span>&#123;</span><br><span class="line">  @<span class="keyword">include</span> center-block; <span class="comment">//@mixin 的调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="有参数-mixin"><a href="#有参数-mixin" class="headerlink" title="有参数 mixin"></a>有参数 mixin</h4><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*有参数 @mixin */</span></span><br><span class="line">@<span class="keyword">mixin</span> opacity(<span class="variable">$opt</span>:<span class="number">100</span>)&#123;</span><br><span class="line">  opcaity:<span class="variable">$opt</span>/<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.demo</span>&#123;</span><br><span class="line">  @<span class="keyword">include</span> opacity;   <span class="comment">//使用默认值调用</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.demo</span>&#123;</span><br><span class="line">  @<span class="keyword">include</span> opacity(<span class="number">40</span>);  <span class="comment">//传递参数调用</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//若 @mixin 定义了多个参数，当传入参数小于定义的参数个数时，后面未获得传入的参数使用默认值，无默认值时则报错。</span></span><br><span class="line"><span class="comment">//也可以通过 参数名和值 同时传入 来选择性的传入参数</span></span><br><span class="line">@<span class="keyword">include</span> hmixin(<span class="variable">$font-size</span>:<span class="number">20px</span>)</span><br></pre></td></tr></table></figure>
@@ -468,10 +486,6 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/18/前端兼容相关的一些知识/" rel="prev" title="前端兼容相关的一些知识">
-                前端兼容相关的一些知识 <i class="fa fa-chevron-right"></i>
-              </a>
-            
           </div>
         </div>
       
@@ -534,15 +548,15 @@
                alt="Gyf" />
           <p class="site-author-name" itemprop="name">Gyf</p>
            
-              <p class="site-description motion-element" itemprop="description">我想问问我可不可以喜欢你啊？</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -553,7 +567,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -564,7 +578,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -575,6 +589,35 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gyufei" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/afei-7701" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1865042755/profile" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
           
         </div>
 
@@ -630,17 +673,13 @@
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
 
         
 
@@ -766,6 +805,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

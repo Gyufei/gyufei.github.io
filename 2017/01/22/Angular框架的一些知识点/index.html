@@ -48,17 +48,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -87,18 +105,18 @@
 
 
 
-<meta name="description" content="模块1.需要使用 @NgModule 装饰器函数传入模块的相关信息来定义模块 2.HTTP模块，Route模块等类似模块，可以导入到根模块中，也可以导入到自定义的模块中。 组件1.需要在 AppModule 的 declarations属性 中声明 2.需要使用 Component 装饰器函数传入组件的相关信息。 3.若有输入属性，需要使用 Input 装饰器(从@angular中导入)装饰属性">
+<meta name="description" content="模块1.需要使用 @NgModule 装饰器函数传入模块的相关信息来定义模块 2.HTTP模块，Route模块等类似模块，可以导入到根模块中，也可以导入到自定义的模块中。 组件1.需要在 AppModule 的 declarations 属性 中声明 2.需要使用 Component 装饰器函数传入组件的相关信息。 3.若有输入属性，需要使用 Input 装饰器(从@angular中导入)装饰属性">
 <meta name="keywords" content="前端,Angular">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular 框架的一些知识点">
 <meta property="og:url" content="http://yoursite.com/2017/01/22/Angular框架的一些知识点/index.html">
 <meta property="og:site_name" content="风之处所">
-<meta property="og:description" content="模块1.需要使用 @NgModule 装饰器函数传入模块的相关信息来定义模块 2.HTTP模块，Route模块等类似模块，可以导入到根模块中，也可以导入到自定义的模块中。 组件1.需要在 AppModule 的 declarations属性 中声明 2.需要使用 Component 装饰器函数传入组件的相关信息。 3.若有输入属性，需要使用 Input 装饰器(从@angular中导入)装饰属性">
+<meta property="og:description" content="模块1.需要使用 @NgModule 装饰器函数传入模块的相关信息来定义模块 2.HTTP模块，Route模块等类似模块，可以导入到根模块中，也可以导入到自定义的模块中。 组件1.需要在 AppModule 的 declarations 属性 中声明 2.需要使用 Component 装饰器函数传入组件的相关信息。 3.若有输入属性，需要使用 Input 装饰器(从@angular中导入)装饰属性">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-07T15:50:13.063Z">
+<meta property="og:updated_time" content="2018-04-14T14:12:55.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular 框架的一些知识点">
-<meta name="twitter:description" content="模块1.需要使用 @NgModule 装饰器函数传入模块的相关信息来定义模块 2.HTTP模块，Route模块等类似模块，可以导入到根模块中，也可以导入到自定义的模块中。 组件1.需要在 AppModule 的 declarations属性 中声明 2.需要使用 Component 装饰器函数传入组件的相关信息。 3.若有输入属性，需要使用 Input 装饰器(从@angular中导入)装饰属性">
+<meta name="twitter:description" content="模块1.需要使用 @NgModule 装饰器函数传入模块的相关信息来定义模块 2.HTTP模块，Route模块等类似模块，可以导入到根模块中，也可以导入到自定义的模块中。 组件1.需要在 AppModule 的 declarations 属性 中声明 2.需要使用 Component 装饰器函数传入组件的相关信息。 3.若有输入属性，需要使用 Input 装饰器(从@angular中导入)装饰属性">
 
 
 
@@ -173,7 +191,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -278,14 +296,14 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
             
             
               
                 Angular 框架的一些知识点
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -357,21 +375,21 @@
       
         <h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>1.需要使用 @NgModule 装饰器函数传入模块的相关信息来定义模块</p>
 <p>2.HTTP模块，Route模块等类似模块，可以导入到根模块中，也可以导入到自定义的模块中。</p>
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>1.需要在 AppModule 的 declarations属性 中声明</p>
-<p>2.需要使用 Component 装饰器函数传入组件的相关信息。</p>
-<p>3.若有输入属性，需要使用 Input 装饰器(从@angular中导入)装饰属性</p>
-<h2 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h2><p>1.需要使用 Injectable 装饰器 （从 angualr/core 中导入）定义</p>
-<p>3.需要在 AppModule 的 providers属性 中声明</p>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>1.需要在 <code>AppModule</code> 的 <code>declarations</code> 属性 中声明</p>
+<p>2.需要使用 <code>Component</code> 装饰器函数传入组件的相关信息。</p>
+<p>3.若有输入属性，需要使用 <code>Input</code> 装饰器(从<code>@angular</code>中导入)装饰属性</p>
+<h2 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h2><p>1.需要使用 <code>Injectable</code> 装饰器 （从 <code>angualr/core</code> 中导入）定义</p>
+<p>3.需要在 <code>AppModule</code> 的 <code>providers</code>属性 中声明</p>
 <p>4.通过组件的构造函数向组件中引入服务。</p>
-<h2 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h2><p>1.需要从 ‘@angular/forms’中导入 FormsModule 到 AppModule的 imports 属性中。</p>
-<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>1.需要从 ‘@angular/router’ 中导入 RouterModule </p>
-<p>2.使用 RouterModule.forRoot()配置路由信息，并将其返回值在 AppModule 或单独的路由模块中 的 imports 属性中声明。</p>
-<p>3.ActivatedRoute包含很多有用的路由信息。另外这些信息大部分是 <strong>可观察对象</strong>。</p>
-<p>3.导航标签可使用指令 routerLink = “所定义path” 进行导航定义,也可以使用命令式的</p>
-<p>Router.navigate(),routerLinkActive可用于定义激活链接的css类。</p>
-<p>4.<router-outlet><router-outlet>标签用于定义导航组件的显示位置。</router-outlet></router-outlet></p>
-<h2 id="HTTP模块"><a href="#HTTP模块" class="headerlink" title="HTTP模块"></a>HTTP模块</h2><p>1.需要从 ‘@angular/http’ 中导入  HttpModule</p>
-<p>2.Http服务中的 方法都返回一个 Response 对象的可观察对象。可将其转换为 Promise 对象用于返回，也可直接使用。</p>
+<h2 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h2><p>1.需要从 <code>@angular/forms</code>中导入 <code>FormsModule</code> 到 <code>AppModule</code>的 <code>imports</code> 属性中。</p>
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><p>1.需要从 <code>@angular/router</code> 中导入 <code>RouterModule</code></p>
+<p>2.使用 <code>RouterModule.forRoot()</code>配置路由信息，并将其返回值在 <code>AppModule</code> 或单独的路由模块中 的 imports 属性中声明。</p>
+<p>3.<code>ActivatedRoute</code>包含很多有用的路由信息。另外这些信息大部分是 <strong>可观察对象</strong>。</p>
+<p>3.导航标签可使用指令 <code>routerLink = “所定义path”</code>进行导航定义,也可以使用命令式的</p>
+<p><code>Router.navigate(),routerLinkActive</code>可用于定义激活链接的css类。</p>
+<p>4.<code>&lt;router-outlet&gt;&lt;router-outlet&gt;</code>标签用于定义导航组件的显示位置。</p>
+<h2 id="HTTP模块"><a href="#HTTP模块" class="headerlink" title="HTTP模块"></a>HTTP模块</h2><p>1.需要从 <code>@angular/http</code> 中导入  <code>HttpModule</code></p>
+<p>2.<code>Http</code>服务中的 方法都返回一个 <code>Response</code> 对象的可观察对象。可将其转换为 <code>Promise</code> 对象用于返回，也可直接使用。</p>
 <p>3.可观察对象主要用于持续多次发送请求的场景比如搜索推荐等。</p>
 <p>4.组件模块中进行请求数据的整理和返回结果的处理，在 服务模块里 进行 数据请求动作。也可以通过再加一层 服务 来模块化相关的数个请求，将此模块作为专门的数据接口模块。</p>
 
@@ -418,8 +436,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/18/JavaScript的几种数组去重方法/" rel="next" title="JavaScript 的几种数组去重方法">
-                <i class="fa fa-chevron-left"></i> JavaScript 的几种数组去重方法
+              <a href="/2017/01/05/比特和字节，带宽和网速/" rel="next" title="比特和字节，带宽和网速">
+                <i class="fa fa-chevron-left"></i> 比特和字节，带宽和网速
               </a>
             
           </div>
@@ -428,8 +446,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/22/TypeScript基础知识/" rel="prev" title="TypeScript 基础知识">
-                TypeScript 基础知识 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/19/使用python解数独/" rel="prev" title="使用python解数独">
+                使用python解数独 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -494,15 +512,15 @@
                alt="Gyf" />
           <p class="site-author-name" itemprop="name">Gyf</p>
            
-              <p class="site-description motion-element" itemprop="description">我想问问我可不可以喜欢你啊？</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -513,7 +531,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -524,7 +542,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -535,6 +553,35 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gyufei" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/afei-7701" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1865042755/profile" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
           
         </div>
 
@@ -590,17 +637,13 @@
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
 
         
 
@@ -726,6 +769,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

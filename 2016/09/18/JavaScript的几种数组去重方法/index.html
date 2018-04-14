@@ -48,17 +48,35 @@
   
 
   
+    
+      
+    
 
-  
-
+    
   
 
   
 
   
     
+      
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -87,18 +105,18 @@
 
 
 
-<meta name="description" content="最基本的数组去重1234567891011121314151617181920function distinct(arr)&amp;#123;	var b = [];   	//初始值也可为 arr[0]	for(var i = 0; i &amp;lt; arr.length;i++)&amp;#123;	var flag = false;    	for(var j =0;j &amp;lt; b.length; j++)&amp;">
+<meta name="description" content="最基本的数组去重1234567891011121314151617function distinct(arr)&amp;#123;    var b = [];   	//初始值也可为 arr[0]    for(var i = 0; i &amp;lt; arr.length;i++)&amp;#123;        var flag = false;        for(var j =0;j &amp;lt; b.len">
 <meta name="keywords" content="前端,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript 的几种数组去重方法">
 <meta property="og:url" content="http://yoursite.com/2016/09/18/JavaScript的几种数组去重方法/index.html">
 <meta property="og:site_name" content="风之处所">
-<meta property="og:description" content="最基本的数组去重1234567891011121314151617181920function distinct(arr)&amp;#123;	var b = [];   	//初始值也可为 arr[0]	for(var i = 0; i &amp;lt; arr.length;i++)&amp;#123;	var flag = false;    	for(var j =0;j &amp;lt; b.length; j++)&amp;">
+<meta property="og:description" content="最基本的数组去重1234567891011121314151617function distinct(arr)&amp;#123;    var b = [];   	//初始值也可为 arr[0]    for(var i = 0; i &amp;lt; arr.length;i++)&amp;#123;        var flag = false;        for(var j =0;j &amp;lt; b.len">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-08T16:27:10.636Z">
+<meta property="og:updated_time" content="2018-04-14T14:58:42.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 的几种数组去重方法">
-<meta name="twitter:description" content="最基本的数组去重1234567891011121314151617181920function distinct(arr)&amp;#123;	var b = [];   	//初始值也可为 arr[0]	for(var i = 0; i &amp;lt; arr.length;i++)&amp;#123;	var flag = false;    	for(var j =0;j &amp;lt; b.length; j++)&amp;">
+<meta name="twitter:description" content="最基本的数组去重1234567891011121314151617function distinct(arr)&amp;#123;    var b = [];   	//初始值也可为 arr[0]    for(var i = 0; i &amp;lt; arr.length;i++)&amp;#123;        var flag = false;        for(var j =0;j &amp;lt; b.len">
 
 
 
@@ -173,7 +191,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <h1 class="site-subtitle" itemprop="description"></h1>
       
   </div>
 
@@ -278,14 +296,14 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
             
             
               
                 JavaScript 的几种数组去重方法
               
             
-          </h1>
+          </h2>
         
 
         <div class="post-meta">
@@ -355,14 +373,14 @@
       
 
       
-        <h5 id="最基本的数组去重"><a href="#最基本的数组去重" class="headerlink" title="最基本的数组去重"></a>最基本的数组去重</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> b = [];   	<span class="comment">//初始值也可为 arr[0]</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length;i++)&#123;</span><br><span class="line">	<span class="keyword">var</span> flag = <span class="literal">false</span>;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> j =<span class="number">0</span>;j &lt; b.length; j++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(arr[i] == b[j])&#123;</span><br><span class="line">			flag = <span class="literal">true</span>;   </span><br><span class="line">			<span class="comment">//可在此处直接break跳出本层循环</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">      </span><br><span class="line">	<span class="keyword">if</span>(!flag)&#123;</span><br><span class="line">		b.push(arr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">      </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h5 id="最基本的数组去重"><a href="#最基本的数组去重" class="headerlink" title="最基本的数组去重"></a>最基本的数组去重</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = [];   	<span class="comment">//初始值也可为 arr[0]</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length;i++)&#123;</span><br><span class="line">        <span class="keyword">var</span> flag = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j =<span class="number">0</span>;j &lt; b.length; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i] == b[j])&#123;</span><br><span class="line">                flag = <span class="literal">true</span>;   </span><br><span class="line">                <span class="comment">//可在此处直接break跳出本层循环</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">if</span>(!flag)&#123;</span><br><span class="line">            b.push(arr[i]);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="使用indexOf-方法"><a href="#使用indexOf-方法" class="headerlink" title="使用indexOf() 方法"></a>使用<code>indexOf()</code> 方法</h5><p>​    思路类似第一种方法，但是使用 indexOf( ) 方法（需注意此方法不支持IE6-8）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> b = [arr[<span class="number">0</span>]]</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b.indexOf(arr[i]) === <span class="number">-1</span>)&#123;b.push(arr[i]);&#125;</span><br><span class="line">		<span class="comment">//上一行也可以用如下写法</span></span><br><span class="line">		<span class="comment">// (b.indexOf(arr[i]) === -1)&amp;&amp;(b.push(arr[i]))</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="使用-indexOf-方法和-filter-方法"><a href="#使用-indexOf-方法和-filter-方法" class="headerlink" title="使用 indexOf() 方法和 filter 方法"></a>使用 <code>indexOf()</code> 方法和 <code>filter</code> 方法</h5><p>​    更进一步，不仅使用了 indexOf() 方法，还使用了 filter</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> b = a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> array.indexOf(item) === index;</span><br><span class="line">		<span class="comment">//元素首次出现的位置是否为元素当前位置</span></span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="排序后去重"><a href="#排序后去重" class="headerlink" title="排序后去重"></a>排序后去重</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	arr.sort()</span><br><span class="line">	<span class="keyword">var</span> b = [arr[<span class="number">0</span>]]</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt; arr.length;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(arr[i] != b[b.length<span class="number">-1</span>])&#123;</span><br><span class="line">		<span class="comment">//排序后查看数组的元素是否与结果数组中最后一个元素相同即可判断是否重复</span></span><br><span class="line">			b.push(arr[i])</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="排序后去重的简略写法"><a href="#排序后去重的简略写法" class="headerlink" title="排序后去重的简略写法"></a>排序后去重的简略写法</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	arr.sort().filter(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> !index || item != array[index<span class="number">-1</span>]</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="ES6-的数组去重"><a href="#ES6-的数组去重" class="headerlink" title="ES6 的数组去重"></a>ES6 的数组去重</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用Set对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(arr);</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">Array</span>.from(set);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用Ｓｅｔ对象的另一种方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>（<span class="title">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> [...new <span class="built_in">Set</span>(arr)];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用Map对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>（<span class="title">arr</span>）</span>&#123;</span><br><span class="line">	<span class="keyword">let</span> res = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">	<span class="keyword">return</span> arr.filter(<span class="function">(<span class="params">item</span>) =&gt;</span> !res.has(a) &amp;&amp; res.set(a,<span class="number">1</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = [arr[<span class="number">0</span>]]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b.indexOf(arr[i]) === <span class="number">-1</span>)&#123;b.push(arr[i]);&#125;</span><br><span class="line">        <span class="comment">//上一行也可以用如下写法</span></span><br><span class="line">        <span class="comment">// (b.indexOf(arr[i]) === -1)&amp;&amp;(b.push(arr[i]))</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="使用-indexOf-方法和-filter-方法"><a href="#使用-indexOf-方法和-filter-方法" class="headerlink" title="使用 indexOf() 方法和 filter 方法"></a>使用 <code>indexOf()</code> 方法和 <code>filter</code> 方法</h5><pre><code>更进一步，不仅使用了 indexOf() 方法，还使用了 filter
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> b = a.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> array.indexOf(item) === index;</span><br><span class="line">        <span class="comment">//元素首次出现的位置是否为元素当前位置</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="排序后去重"><a href="#排序后去重" class="headerlink" title="排序后去重"></a>排序后去重</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    arr.sort()</span><br><span class="line">    <span class="keyword">var</span> b = [arr[<span class="number">0</span>]]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt; arr.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i] != b[b.length<span class="number">-1</span>])&#123;</span><br><span class="line">        <span class="comment">//排序后查看数组的元素是否与结果数组中最后一个元素相同即可判断是否重复</span></span><br><span class="line">            b.push(arr[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="排序后去重的简略写法"><a href="#排序后去重的简略写法" class="headerlink" title="排序后去重的简略写法"></a>排序后去重的简略写法</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    arr.sort().filter(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> !index || item != array[index<span class="number">-1</span>]</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="ES6-的数组去重"><a href="#ES6-的数组去重" class="headerlink" title="ES6 的数组去重"></a>ES6 的数组去重</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用Set对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>(arr);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from(set);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用Ｓｅｔ对象的另一种方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>（<span class="title">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [...new <span class="built_in">Set</span>(arr)];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//使用Map对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">distinct</span>（<span class="title">arr</span>）</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="keyword">return</span> arr.filter(<span class="function">(<span class="params">item</span>) =&gt;</span> !res.has(a) &amp;&amp; res.set(a,<span class="number">1</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -417,8 +435,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/22/Angular框架的一些知识点/" rel="prev" title="Angular 框架的一些知识点">
-                Angular 框架的一些知识点 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/11/11/jQuery中append(),prepend()与after(),before()的区别/" rel="prev" title="jQuery中append(),prepend()与after(),before()的区别">
+                jQuery中append(),prepend()与after(),before()的区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -483,15 +501,15 @@
                alt="Gyf" />
           <p class="site-author-name" itemprop="name">Gyf</p>
            
-              <p class="site-description motion-element" itemprop="description">我想问问我可不可以喜欢你啊？</p>
-          
+              <p class="site-description motion-element" itemprop="description"></p>
+           
         </div>
         <nav class="site-state motion-element">
 
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -502,7 +520,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -513,7 +531,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -524,6 +542,35 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Gyufei" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/afei-7701" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/1865042755/profile" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
           
         </div>
 
@@ -579,17 +626,13 @@
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
 
         
 
@@ -715,6 +758,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
