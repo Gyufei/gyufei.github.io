@@ -530,8 +530,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/14/Rails学习笔记二/" rel="next" title="Rails 学习笔记（二）:目录结构">
-                <i class="fa fa-chevron-left"></i> Rails 学习笔记（二）:目录结构
+              <a href="/2018/02/14/RUBY学习笔记一/" rel="next" title="Ruby 学习笔记（一）:基本语法">
+                <i class="fa fa-chevron-left"></i> Ruby 学习笔记（一）:基本语法
               </a>
             
           </div>
@@ -540,8 +540,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/14/RUBY学习笔记一/" rel="prev" title="Ruby 学习笔记（一）:基本语法">
-                Ruby 学习笔记（一）:基本语法 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/19/我的VIM配置/" rel="prev" title="我的VIM配置">
+                我的VIM配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1009,5 +1009,46 @@
 
   
 
+
 </body>
+  <script>
+    $(document).ready(function () {
+    var SelectText = function(element) {
+    var doc = document
+    , text = element
+    , range, selection
+    ;    
+    if (doc.body.createTextRange) {
+    range = document.body.createTextRange();
+    range.moveToElementText(text);
+    range.select();
+    } else if (window.getSelection) {
+    selection = window.getSelection();        
+    range = document.createRange();
+    range.selectNodeContents(text);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    }
+    };
+    $(".code").each(function() {
+    var code = $(this).get(0);
+    var button_html = 
+    '<div style="position: fixed;'                                                               +
+    'right: 3%;'                                                                     +
+    'margin-top: 5px;'                                                               +
+    'font-family: consolas, Menlo, \'PingFang SC\', \'Microsoft YaHei\', monospace;' +
+    'font-size: 10px;'                                                               +
+    'cursor: pointer;'                                                               +
+    'color: #e31436;'                                                                +
+    '">'                                                                             +
+    '<span><i class="fa fa-copy fa-lg"></i></span>'                                                                          +
+    '</div>';
+    var button = $(button_html);
+    $(button).click(function() {
+    SelectText(code);
+    });
+    $(button).insertBefore(this);
+    });
+    });
+  </script>
 </html>
