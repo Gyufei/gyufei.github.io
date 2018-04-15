@@ -114,7 +114,7 @@
 <meta property="og:description" content="算法基本概念一个算法的效率主要从两方面来衡量，即执行所需的时间长短和所需的存储空间大小。也就是算法中的两个复杂度：  时间复杂度：评估执行程序所需的时间，可以估算出程序对处理器的使用程度。 空间复杂度：评估执行程序所需的存储空间，可以估算出程序对计算机内存的使用程度。  在算法的效率研究中，因为时间复杂度比空间复杂度更容易产生问题。因此主要研究的是时间复杂度，在不特别说明的情况下，算法的复杂度通常">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img.catqu.com/images/2018/04/13/19f1e1491f5294a2.jpg">
-<meta property="og:updated_time" content="2018-04-15T10:18:29.921Z">
+<meta property="og:updated_time" content="2018-04-15T10:25:33.431Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法学习笔记（一）：时间复杂度">
 <meta name="twitter:description" content="算法基本概念一个算法的效率主要从两方面来衡量，即执行所需的时间长短和所需的存储空间大小。也就是算法中的两个复杂度：  时间复杂度：评估执行程序所需的时间，可以估算出程序对处理器的使用程度。 空间复杂度：评估执行程序所需的存储空间，可以估算出程序对计算机内存的使用程度。  在算法的效率研究中，因为时间复杂度比空间复杂度更容易产生问题。因此主要研究的是时间复杂度，在不特别说明的情况下，算法的复杂度通常">
@@ -264,9 +264,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -394,7 +428,7 @@
 <h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><h4 id="时间频度"><a href="#时间频度" class="headerlink" title="时间频度"></a>时间频度</h4><p>一个算法花费的时间与算法中语句的执行次数成正比。可将<strong>算法中的语句执行次数</strong>称为<strong>时间频度</strong>或<strong>语句频度</strong>。记为<code>T(n)</code>。其中<code>n</code> 为问题的规模，类似需要排序的数组的长度，需要查询的元素的多少等。</p>
 <p>当<code>n</code>不断变化时，时间频度<code>T(n)</code>也不断变化。也就是说时间频度<code>T(n)</code>是关于问题规模<code>n</code>的一个函数。</p>
 <h4 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><p>为了呈现时间频度<code>T(n)</code>随问题规模<code>n</code>的变化而变化时呈现出的规律，引入了<strong>时间复杂度</strong>的概念。</p>
-<p>若存在某个辅助函数<code>f(n)</code>，使得当<code>n</code>趋近于无穷大时，<code>T(n)/f(n)</code>的极限值为不为0的常数，则称<code>f(n)</code>为<code>T(n)</code>的同数量级函数（最高阶数相同）。而此时将<code>T(n)=O(f(n))</code>,将<code>O(f(n))</code>称为算法的<strong>渐进时间复杂度</strong>，简称<strong>时间复杂度。</strong>表示随着问题规模<code>n</code>的增大，算法执行所需要的时间的增长可以用<code>O(f(n))</code>表示。</p>
+<p>若存在某个辅助函数<code>f(n)</code>，使得当<code>n</code>趋近于无穷大时，<code>T(n)/f(n)</code>的极限值为不为0的常数，则称<code>f(n)</code>为<code>T(n)</code>的同数量级函数（最高阶数相同）。而此时有<code>T(n)=O(f(n))</code>,将<code>O(f(n))</code>称为算法的<strong>渐进时间复杂度</strong>，简称<strong>时间复杂度。</strong>表示随着问题规模<code>n</code>的增大，算法执行所需要的时间的增长可以用<code>O(f(n))</code>表示。</p>
 <blockquote>
 <p>在判断<code>f(n)</code>函数随<code>n</code>的变化而变化的规律时，最好和最准确的方法当然是求出函数的一阶导数。但在算法上，因为只需要大体了解算法的优劣即可，因此可以直接考虑<code>f(n)</code>函数中对增长速度影响最大的一项，即函数的<strong>最高阶数</strong>来评估算法的优劣。大O符号<code>O()</code>就是这样一种运算符号，作用为去除其他低阶项和与最高阶项相乘的常数，只保留最高阶项。 </p>
 </blockquote>
@@ -428,6 +462,8 @@
     <div>
       
         
+    <div style="text-align:center;color: #ccc;font-size:14px;"> ----本文结束<i class="fa fa-star-o" style="color:#c40000"></i>感谢阅读----</div>
+
 
       
     </div>
@@ -439,11 +475,19 @@
       
     </div>
 
+    <div>
+      
+        
+
+      
+    </div>
+
+
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
         </div>
       
@@ -777,6 +821,132 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
 
 
 
