@@ -1,3 +1,3 @@
-// build time:Sat Apr 21 2018 13:24:40 GMT+0800 (CST)
+// build time:Mon Apr 23 2018 00:35:51 GMT+0800 (CST)
 $(document).ready(function(){var n=$(".header-inner");var r=$("#sidebar");var e=function(){return n.height()+CONFIG.sidebar.offset};var i=function(n){return r.css({"margin-top":n})};var a=window.matchMedia("(min-width: 991px)");i(e()).show();a.addListener(function(n){if(n.matches){i(e())}})});
 //rebuild by neat 
